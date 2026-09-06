@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GraceVision | Shop Everything You Love</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            GraceVision
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search products..."
+            >
+
+            <button class="cart-button" onclick="openCart()">
+                Cart <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                WELCOME TO GRACEVISION
+            </p>
+
+            <h1>
+                Everything You Need. All in One Place.
+            </h1>
+
+            <p>
+                Discover useful, stylish and affordable products
+                for everyday life.
+            </p>
+
+            <a href="#shop" class="shop-button">
+                Shop Now
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section id="categories" class="categories">
+
+        <h2>Shop by Category</h2>
+
+        <div class="category-grid">
+
+            <button onclick="filterCategory('All')">
+                All Products
+            </button>
+
+            <button onclick="filterCategory('Electronics')">
+                Electronics
+            </button>
+
+            <button onclick="filterCategory('Fashion')">
+                Fashion
+            </button>
+
+            <button onclick="filterCategory('Home')">
+                Home & Kitchen
+            </button>
+
+            <button onclick="filterCategory('Car')">
+                Car Accessories
+            </button>
+
+            <button onclick="filterCategory('Eyewear')">
+                Eyewear
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- SHOP -->
+    <section id="shop" class="shop">
+
+        <h2>Our Products</h2>
+
+        <p class="section-text">
+            Explore our collection of useful products.
+        </p>
+
+
+        <div id="productGrid" class="product-grid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div
+                class="product-card"
+                data-name="Classic Black Sunglasses"
+                data-category="Eyewear"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="sunglasses.jpg.png.png"
+                        alt="Classic Black Sunglasses"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">
+                        EYEWEAR
+                    </span>
+
+                    <h3>
+                        Classic Black Sunglasses
+                    </h3>
+
+                    <p>
+                        Stylish everyday sunglasses with
+                        a modern look.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹599</strong>
+
+                        <button
+                            onclick="addToCart('Classic Black Sunglasses', 599)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div
+                class="product-card"
+                data-name="Wireless Earbuds"
+                data-category="Electronics"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="wireless earbuds.png"
+                        alt="Wireless Earbuds"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">
+                        ELECTRONICS
+                    </span>
+
+                    <h3>
+                        Wireless Earbuds
+                    </h3>
+
+                    <p>
+                        Compact wireless earbuds for
+                        everyday listening.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹899</strong>
+
+                        <button
+                            onclick="addToCart('Wireless Earbuds', 899)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div
+                class="product-card"
+                data-name="Travel Backpack"
+                data-category="Fashion"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="travel back pack.jfif"
+                        alt="Travel Backpack"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">
+                        FASHION
+                    </span>
+
+                    <h3>
+                        Travel Backpack
+                    </h3>
+
+                    <p>
+                        A practical backpack for school,
+                        travel and everyday use.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹799</strong>
+
+                        <button
+                            onclick="addToCart('Travel Backpack', 799)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div
+                class="product-card"
+                data-name="Kitchen Organizer"
+                data-category="Home"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="kitchen organizer.jfif"
+                        alt="Kitchen Organizer"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">
+                        HOME & KITCHEN
+                    </span>
+
+                    <h3>
+                        Kitchen Organizer
+                    </h3>
+
+                    <p>
+                        Keep your kitchen clean and
+                        organized.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹499</strong>
+
+                        <button
+                            onclick="addToCart('Kitchen Organizer', 499)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div
+                class="product-card"
+                data-name="Car Seat Organizer"
+                data-category="Car"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="car seat organizer.jfif"
+                        alt="Car Seat Organizer"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">
+                        CAR ACCESSORIES
+                    </span>
+
+                    <h3>
+                        Car Seat Organizer
+                    </h3>
+
+                    <p>
+                        Keep essential items organized
+                        during your journeys.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹599</strong>
+
+                        <button
+                            onclick="addToCart('Car Seat Organizer', 599)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+
+            <div
+                class="product-card"
+                data-name="Adjustable Mobile Stand"
+                data-category="Electronics"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="adjustable mobile stand.jfif"
+                        alt="Adjustable Mobile Stand"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="category">
+                        ELECTRONICS
+                    </span>
+
+                    <h3>
+                        Adjustable Mobile Stand
+                    </h3>
+
+                    <p>
+                        A convenient stand for your
+                        phone or tablet.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹299</strong>
+
+                        <button
+                            onclick="addToCart('Adjustable Mobile Stand', 299)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <p id="noResults" class="no-results">
+            No products found.
+        </p>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about" class="about">
+
+        <h2>Why GraceVision?</h2>
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Useful Products
+                </h3>
+
+                <p>
+                    Products selected for everyday
+                    needs and modern lifestyles.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ★
+                </div>
+
+                <h3>
+                    Simple Shopping
+                </h3>
+
+                <p>
+                    A clean and convenient shopping
+                    experience.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ♥
+                </div>
+
+                <h3>
+                    Customer First
+                </h3>
+
+                <p>
+                    We aim to provide a reliable
+                    shopping experience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <h2>
+            Contact Us
+        </h2>
+
+        <p>
+            Have a question?
+        </p>
+
+        <p class="email">
+            gracevision860@gmail.com
+        </p>
+
+    </section>
+
+
+    <!-- CART -->
+
+    <div id="cartOverlay" class="overlay">
+
+        <div class="cart-panel">
+
+            <div class="cart-header">
+
+                <h2>
+                    Your Cart
+                </h2>
+
+                <button
+                    onclick="closeCart()"
+                    class="close-button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div id="cartItems">
+
+                <p class="empty-cart">
+                    Your cart is empty.
+                </p>
+
+            </div>
+
+            <div class="cart-footer">
+
+                <div class="cart-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="cartTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+                <button
+                    class="checkout-button"
+                    onclick="openCheckout()"
+                >
+                    Proceed to Checkout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHECKOUT -->
+
+    <div id="checkoutOverlay" class="overlay">
+
+        <div class="checkout-panel">
+
+            <div class="cart-header">
+
+                <h2>
+                    Checkout
+                </h2>
+
+                <button
+                    onclick="closeCheckout()"
+                    class="close-button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <form id="checkoutForm">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    required
+                >
+
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    required
+                >
+
+
+                <label>Delivery Address</label>
+
+                <textarea
+                    id="customerAddress"
+                    required
+                ></textarea>
+
+
+                <label>City</label>
+
+                <input
+                    type="text"
+                    id="customerCity"
+                    required
+                >
+
+
+                <label>PIN Code</label>
+
+                <input
+                    type="text"
+                    id="customerPin"
+                    required
+                >
+
+
+                <div class="checkout-summary">
+
+                    <span>
+                        Order Total
+                    </span>
+
+                    <strong id="checkoutTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="place-order-button"
+                >
+                    Place Order
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 GraceVision. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
